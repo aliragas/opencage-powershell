@@ -1,8 +1,6 @@
 # OpenCage PowerShell Module
 
-[![CI](https://github.com/opencagedata/opencage-powershell/actions/workflows/ci.yml/badge.svg)](https://github.com/opencagedata/opencage-powershell/actions/workflows/ci.yml)
-
-A user-friendly PowerShell module for the [OpenCage Geocoding API](https://opencagedata.com/api), providing forward and reverse geocoding with first-class handling of quotas, errors, and optional API parameters.
+A fully-featured PowerShell module for the [OpenCage Geocoding API](https://opencagedata.com/api), providing forward and reverse geocoding with first-class handling of quotas, errors, and optional API parameters.
 
 ## Features
 
@@ -11,9 +9,7 @@ A user-friendly PowerShell module for the [OpenCage Geocoding API](https://openc
 - Defensive, global-friendly parsing: no assumptions about results, components, or rate metadata.
 - Structured responses include the originating request URI, HTTP status code, rate-limit headers, and the full raw payload for advanced diagnostics.
 - Built-in protection against accidental overuse: stops immediately on `402` and `403` and surfaces the API's `status.message`.
-- Uses a unique User-Agent string (`OpenCage.PowerShell/<version> (+https://github.com/opencagedata/opencage-powershell)`).
 - Test suite powered by [Pester 5](https://pester.dev) using the official OpenCage test keys (including the `NOWHERE-INTERESTING` no-results scenario).
-- CI-ready via GitHub Actions and publishable to the PowerShell Gallery.
 
 ## Prerequisites
 
@@ -29,17 +25,15 @@ Install-Module Pester -MinimumVersion 5.5.0 -Scope CurrentUser
 
 ## Installation
 
-> The module namespace is `OpenCage`. Once published to the PowerShell Gallery you will be able to install it with:
->
-> ```powershell
-> Install-Module OpenCage -Scope CurrentUser
-> ```
->
-> Until then, you can clone the repository and import it locally:
->
-> ```powershell
-> Import-Module (Join-Path $PWD 'OpenCage' 'OpenCage.psd1') -Force
-> ```
+
+The module namespace is `OpenCage`. Install it from the Powershell Gallery:
+
+
+```powershell
+
+Install-Module OpenCage -Scope CurrentUser
+
+```
 
 ## Configuration
 
@@ -129,28 +123,6 @@ Invoke-Geocode \
 ```powershell
 Invoke-Pester -Path tests -Output Detailed
 ```
-
-## Continuous Integration
-
-GitHub Actions workflow: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
-
-It installs Pester and runs the test suite on every push and pull request. A status badge is included at the top of this README.
-
-## Publishing
-
-Once you are ready to release, bump the version in:
-
-- `OpenCage/OpenCage.psd1`
-- `OpenCage/OpenCage.psm1` (`$script:ModuleVersion`)
-
-Then publish to the PowerShell Gallery:
-
-```powershell
-Publish-Module -Path ./OpenCage -NuGetApiKey 'YOUR-NUGET-API-KEY'
-```
-
-Please also tag the release on GitHub so the badge links remain accurate.
-
 ## Contributing
 
 Pull requests and issues are welcome. Please:
@@ -162,7 +134,3 @@ Pull requests and issues are welcome. Please:
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE).
-
-## Stay in touch
-
-We’d love to know how you are using the module! Share your project with the OpenCage team at https://opencagedata.com/contact so it can be added to the official SDK list and (hopefully) featured on their blog.
