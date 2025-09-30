@@ -1,6 +1,6 @@
 Set-StrictMode -Version Latest
 
-$script:ModuleVersion = '0.1.0'
+$script:ModuleVersion = '0.2.0'
 $script:ModuleUserAgent = "OpenCage.PowerShell/$($script:ModuleVersion) (+https://github.com/aliragas/opencage-powershell)"
 $script:InvariantCulture = [System.Globalization.CultureInfo]::InvariantCulture
 

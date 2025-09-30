@@ -1,10 +1,10 @@
 @{
     RootModule        = 'OpenCage.psm1'
-    ModuleVersion     = '0.1.0'
+    ModuleVersion     = '0.2.0'
     GUID              = 'a9f1f1d5-1b49-4e7f-9c0f-3bce49963cf0'
-    Author            = 'OpenCage Data GmbH'
-    CompanyName       = 'OpenCage Data GmbH'
-    Copyright         = 'Copyright (c) 2025 OpenCage Data GmbH'
+    Author            = 'Allison Ragas'
+    CompanyName       = 'Allison Ragas'
+    Copyright         = 'Copyright (c) 2025 Allison Ragas'
     Description       = 'PowerShell module for interacting with the OpenCage Geocoding API.'
     PowerShellVersion = '7.0'
 
